@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  image: MyString
+  category: one
+  identified: false
+  common_name: MyString
+  scientific_name: MyString
+  public: false
+  date_time_seen: 2020-11-30 10:11:01
+  notes: MyText
+  location: one
+
+two:
+  user: two
+  image: MyString
+  category: two
+  identified: false
+  common_name: MyString
+  scientific_name: MyString
+  public: false
+  date_time_seen: 2020-11-30 10:11:01
+  notes: MyText
+  location: two
