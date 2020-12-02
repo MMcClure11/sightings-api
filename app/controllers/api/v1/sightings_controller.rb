@@ -6,10 +6,9 @@ class Api::V1::SightingsController < ApplicationController
   end
 
   def create
-    byebug
-    # category = Category.find_by(name: params[:category])
     sighting = current_user.sightings.build(sighting_params)
     sighting.category = Category.find_by(name: params[:category])
+    sighting.location = Location.find_or_create_by(city: params[:city], region: params[:region], country: params[:country])
     if sighting.save 
       render json: sighting, status: 200
     else
