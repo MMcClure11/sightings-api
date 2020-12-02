@@ -1,5 +1,5 @@
 class Api::V1::SightingsController < ApplicationController
-  before_action :set_sighting, only: :update
+  before_action :set_sighting, only: [:update, :destroy]
 
   def index
     sightings = Sighting.all
@@ -31,6 +31,11 @@ class Api::V1::SightingsController < ApplicationController
       }
       render json: error_resp, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @sighting.destroy
+    render json: {notice: 'Sighting destroyed'}, status: 200
   end
 
   private
