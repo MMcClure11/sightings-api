@@ -1,4 +1,5 @@
 class Api::V1::SightingsController < ApplicationController
+  before_action :set_sighting, only: :update
 
   def index
     sightings = Sighting.all
@@ -19,7 +20,24 @@ class Api::V1::SightingsController < ApplicationController
     end
   end
 
+  def update
+    @sighting.category = Category.find_by(name: params[:category])
+    @sighting.location = Location.find_or_create_by(city: params[:city], region: params[:region], country: params[:country])
+    if @sighting.update(sighting_params)
+      render json: @sighting, status: 200
+    else
+      error_resp = {
+        error: @sighting.errors.full_messages.to_sentence
+      }
+      render json: error_resp, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_sighting
+    @sighting = Sighting.find_by(id: params[:id])
+  end
 
   def sighting_params
     params.require(:sighting).permit(
