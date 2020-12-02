@@ -6,8 +6,10 @@ class Api::V1::SightingsController < ApplicationController
   end
 
   def create
-    sighting = current_user.sightings.build(sighting_params)
     byebug
+    # category = Category.find_by(name: params[:category])
+    sighting = current_user.sightings.build(sighting_params)
+    sighting.category = Category.find_by(name: params[:category])
     if sighting.save 
       render json: sighting, status: 200
     else
