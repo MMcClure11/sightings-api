@@ -51,7 +51,8 @@ class Api::V1::SightingsController < ApplicationController
       :common_name,
       :scientific_name,
       :date,
-      :notes
+      :notes,
+      :public
     )
   end
 end
