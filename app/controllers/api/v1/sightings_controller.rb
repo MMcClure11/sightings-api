@@ -23,6 +23,7 @@ class Api::V1::SightingsController < ApplicationController
   def update
     @sighting.category = Category.find_by(name: params[:category])
     @sighting.location = Location.find_or_create_by(city: params[:city], region: params[:region], country: params[:country])
+    byebug
     if @sighting.update(sighting_params)
       render json: @sighting, status: 200
     else
@@ -45,14 +46,14 @@ class Api::V1::SightingsController < ApplicationController
   end
 
   def sighting_params
-    params.require(:sighting).permit(
+    params.transform_keys(&:underscore).permit(
       :image,
       :identified,
       :common_name,
       :scientific_name,
       :date,
       :notes,
-      :public
+      :public 
     )
   end
 end
