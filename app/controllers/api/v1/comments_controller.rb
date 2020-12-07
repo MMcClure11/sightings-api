@@ -6,7 +6,6 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
-    byebug
     comment = current_user.comments.create(comment_params)
     render json: comment
   end
