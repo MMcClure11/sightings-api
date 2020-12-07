@@ -1,9 +1,13 @@
 class Api::V1::SightingsController < ApplicationController
-  before_action :set_sighting, only: [:update, :destroy]
+  before_action :set_sighting, only: [:update, :destroy, :show]
 
   def index
     sightings = Sighting.where(public: true)
     render json: sightings, status: 200
+  end
+
+  def show
+    render json: @sighting, serializer: SightingShowSerializer
   end
 
   def create
@@ -23,7 +27,6 @@ class Api::V1::SightingsController < ApplicationController
   def update
     @sighting.category = Category.find_by(name: params[:category])
     @sighting.location = Location.find_or_create_by(city: params[:city], region: params[:region], country: params[:country])
-    byebug
     if @sighting.update(sighting_params)
       render json: @sighting, status: 200
     else
