@@ -1,5 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  before_action :set_comment, only: [:destroy]
+  before_action :set_comment, only: [:update, :destroy]
 
 
   def index
@@ -10,6 +10,15 @@ class Api::V1::CommentsController < ApplicationController
   def create
     comment = current_user.comments.create(comment_params)
     render json: comment
+  end
+
+  def update
+    sighting = @comment.sighting
+    if @comment.update(content: params[:content])
+      render json: sighting, serializer: SightingShowSerializer, status: 200
+    else
+      render json: {error: 'Could not update'}
+    end
   end
 
   def destroy
