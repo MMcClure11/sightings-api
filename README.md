@@ -1,24 +1,77 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Nature Watch
 
-Things you may want to cover:
+## Overview
 
-* Ruby version
+- [About The Project](#about)
+- [Getting Started](#starting)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-* System dependencies
+## <a id="about">About the Project</a>
 
-* Configuration
+Nature Watch is SPA that allows users to create entries of sightings of Flora and Fauna they have seen in nature. <a href="https://github.com/MMcClure11/sightings-client">here</a>. This is the Rails API backend which handles data persistance with PostgreSQL.
 
-* Database creation
+Watch the demo <a href="https://youtu.be/PAAq2Ro539w">here</a>.
 
-* Database initialization
+## <a id="starting">Getting Started</a>
 
-* How to run the test suite
+Make sure you have the following tools installed on your system:
 
-* Services (job queues, cache servers, search engines, etc.)
+<br>
+Github<br>
+Ruby 2.6.1<br>
+Rails 6.0.3<br>
 
-* Deployment instructions
+## <a id="prerequisites">Prerequisites</a>
 
-* ...
+This is an example of what you you need to use the software and how to install them.
+<br>
+bundle install<br>
+rails console<br>
+rails db:create<br>
+rails db:migrate<br>
+
+## <a id="installation">Installation</a>
+
+1. Make one folder and inside that folder clone both repos:
+  <br>git clone git@github.com:MMcClure11/sightings-client.git
+  <br>git clone git@github.com:MMcClure11/sightings-api.git
+2. cd nature-watch-api
+3. Install the gemfile packages
+  <br>bundle install
+4. Set up the Database
+  <br>  rails db:create
+  <br> rails db:migrate
+  <br> optionally seed the database: rails db:seed
+5. Starting the Server (keep open while running the program)
+  <br> rails s
+6. cd into nature-watch-client
+  <br>yarn install
+  <br>yarn start
+  <br>This will open in your browser.
+
+## <a id="contributing">Contributing</a>
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/MMcClure11/nature-watch-api.git and https://github.com/MMcClure11/nature-watch-client.git.
+
+## <a id="license">License</a>
+
+Distributed under the MIT License. https://opensource.org/licenses/MIT
+
+## <a id="acknowledgements">Acknowledgements</a>
+- Flatiron School
+- @Jordles113
+
