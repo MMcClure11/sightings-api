@@ -13,8 +13,12 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
-    render json: {notice: 'Comment destroyed'}, status: 200
+    sighting = @comment.sighting
+    if @comment.destroy
+      render json: sighting, serializer: SightingShowSerializer, status: 200
+    else
+      render json: {error: 'Could not delete'}
+    end
   end
 
   private
