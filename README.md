@@ -14,7 +14,7 @@
 
 ## <a id="about">About the Project</a>
 
-Nature Watch is SPA that allows users to create entries of sightings of Flora and Fauna they have seen in nature. <a href="https://github.com/MMcClure11/sightings-client">here</a>. This is the Rails API backend which handles data persistance with PostgreSQL.
+Nature Watch is SPA that allows users to create entries of sightings of Flora and Fauna they have seen in nature. View the frontend <a href="https://github.com/MMcClure11/sightings-client">here</a>. This is the Rails API backend which handles data persistance with PostgreSQL.
 
 Watch the demo <a href="https://youtu.be/PAAq2Ro539w">here</a>.
 
