@@ -3,4 +3,8 @@ class SightingShowSerializer < ActiveModel::Serializer
   belongs_to :location
   belongs_to :category
   has_many :comments
+
+  def comments
+    object.comments.order("created_at ASC")
+  end
 end

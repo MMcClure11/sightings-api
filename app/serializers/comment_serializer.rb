@@ -9,4 +9,7 @@ class CommentSerializer < ActiveModel::Serializer
   def userId
     object.user.id
   end
+
+ 
+
 end
