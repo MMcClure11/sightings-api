@@ -7,10 +7,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do 
-      resources :sightings
-      resources :categories
-      resources :users
-      resources :comments
+      resources :sightings, only: [:index, :show, :create, :update, :destroy]
+      resources :categories, only: [:index]
+      resources :users, only: [:create]
+      resources :comments, only: [:index, :create, :update, :destroy]
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
