@@ -8,8 +8,15 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
-    comment = current_user.comments.create(comment_params)
-    render json: comment
+    comment = current_user.comments.build(comment_params)
+    if comment.save
+      render json: comment, status: 200
+    else
+      error_resp = {
+        error: sighting.errors.full_messages.to_sentence
+      }
+      render json: error_resp, status: :unprocessable_entity
+    end
   end
 
   def update
