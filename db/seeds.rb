@@ -6,37 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# c1 = Category.create(name: "Bird")
-# c2 = Category.create(name: "Freshwater Creature")
-# c3 = Category.create(name: "Fungus")
-# c4 = Category.create(name: "Insect")
-# c5 = Category.create(name: "Mammal")
-# c6 = Category.create(name: "Plant")
-# c7 = Category.create(name: "Reptile")
-# c8 = Category.create(name: "Salt Water Creature")
-# c9 = Category.create(name: "Other")
+c1 = Category.create(name: "Bird")
+c2 = Category.create(name: "Freshwater Creature")
+c3 = Category.create(name: "Fungus")
+c4 = Category.create(name: "Insect")
+c5 = Category.create(name: "Mammal")
+c6 = Category.create(name: "Plant")
+c7 = Category.create(name: "Reptile")
+c8 = Category.create(name: "Salt Water Creature")
+c9 = Category.create(name: "Other")
 
-# l1 = Location.create(city: "Rice", region: "MN", country: "USA")
-# l2 = Location.create(city: "Tepoztlan", region: "Morelos", country: "MX")
-# l3 = Location.create(city: "Puerto Ayora", region: "Galapagos Islands", country: "Ecuador")
+l1 = Location.create(city: "Rice", region: "MN", country: "USA")
+l2 = Location.create(city: "Tepoztlan", region: "Morelos", country: "MX")
+l3 = Location.create(city: "Puerto Ayora", region: "Galapagos Islands", country: "Ecuador")
 
-# u1 = User.create(name: "Meks M", username: "Meks", password: "1234")
-# u2 = User.create(name: "Max M", username: "MadMax", password: "1234")
+u1 = User.create(name: "Meks M", username: "Meks", password: "1234")
+u2 = User.create(name: "Max M", username: "MadMax", password: "1234")
 
-# u1.sightings.create(
-#   image: "https://avibirds.com/wp-content/uploads/2020/08/great-blue-heron-400x442.jpg",
-#   category_id: 1,
-#   identified: true,
-#   common_name: "Great Blue Heron",
-#   scientific_name: "Ardea herodias",
-#   public: true,
-#   date: "2020-06-15",
-#   time: "09:15",
-#   notes: "Watched the heron fish, it caught a frog for breakfast.",
-#   location_id: 1
-# )
+u1.sightings.create(
+  image: "https://avibirds.com/wp-content/uploads/2020/08/great-blue-heron-400x442.jpg",
+  category_id: 1,
+  identified: true,
+  common_name: "Great Blue Heron",
+  scientific_name: "Ardea herodias",
+  public: true,
+  date: "2020-06-15",
+  time: "09:15",
+  notes: "Watched the heron fish, it caught a frog for breakfast.",
+  location_id: 1
+)
 
-User.first.sightings.create(
+u1.sightings.create(
   image: "https://i.pinimg.com/originals/74/59/a9/7459a91fd5931e136c8a6a79e76de36e.jpg",
   category_id: 5,
   identified: true,
@@ -49,7 +49,7 @@ User.first.sightings.create(
   location_id: 1
 )
 
-User.first.sightings.create(
+u2.sightings.create(
   image: "https://i.pinimg.com/originals/6e/3f/a6/6e3fa6fd114e418f0109d3a2071f71d6.jpg",
   category_id: 5,
   identified: true,
@@ -62,7 +62,7 @@ User.first.sightings.create(
   location_id: 2
 )
 
-User.last.sightings.create(
+u2.sightings.create(
   image: "https://i.pinimg.com/originals/6e/3f/a6/6e3fa6fd114e418f0109d3a2071f71d6.jpg",
   category_id: 7,
   identified: true,
