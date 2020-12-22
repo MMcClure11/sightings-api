@@ -8,7 +8,7 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
-    comment = current_user.comments.build(comment_params)
+    comment = Comment.new(comment_params)
     if comment.save
       render json: comment, status: 200
     else
@@ -44,7 +44,7 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def comment_params
-    params.permit(:sighting_id, :content)
+    params.permit(:sighting_id, :content, :user_id)
   end
 
 end
