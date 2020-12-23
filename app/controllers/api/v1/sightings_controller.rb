@@ -2,7 +2,8 @@ class Api::V1::SightingsController < ApplicationController
   before_action :set_sighting, only: [:update, :destroy, :show]
 
   def index
-    sightings = Sighting.where(public: true)
+    # sightings = Sighting.where(public: true)
+    sightings = Sighting.all
     render json: sightings, status: 200
   end
 
