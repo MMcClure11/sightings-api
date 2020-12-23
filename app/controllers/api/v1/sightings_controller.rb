@@ -12,7 +12,8 @@ class Api::V1::SightingsController < ApplicationController
   end
 
   def create
-    sighting = current_user.sightings.build(sighting_params)
+    # sighting = current_user.sightings.build(sighting_params)
+    sighting = Sighting.new(sighting_params)
     sighting.category = Category.find_by(name: params[:category])
     sighting.location = Location.find_or_create_by(city: params[:city], region: params[:region], country: params[:country])
     if sighting.save 
@@ -57,7 +58,8 @@ class Api::V1::SightingsController < ApplicationController
       :scientific_name,
       :date,
       :notes,
-      :public 
+      :public,
+      :user_id 
     )
   end
 end
