@@ -16,7 +16,9 @@
 
 Nature Watch is SPA that allows users to create entries of sightings of Flora and Fauna they have seen in nature. View the frontend <a href="https://github.com/MMcClure11/sightings-client">here</a>. This is the Rails API backend which handles data persistance with PostgreSQL.
 
-Watch the demo <a href="https://youtu.be/PAAq2Ro539w">here</a>.
+Watch the demo <a href="https://youtu.be/CpBJMAcJAYY">here</a>.
+
+Check out the live site <a href="https://nature-watch.herokuapp.com/">here</a>.
 
 ## <a id="starting">Getting Started</a>
 
