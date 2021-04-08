@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :sightings, only: [:index, :show, :create, :update, :destroy]
       resources :categories, only: [:index]
-      resources :users, only: [:create]
+      resources :users, only: [:create, :index]
       resources :comments, only: [:index, :create, :update, :destroy]
     end
   end
